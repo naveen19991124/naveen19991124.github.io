@@ -1,26 +1,45 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./Components/Navbar";
+import HomePage from "./Components/Pages/HomePage";
+import BlogPage from "./Components/Pages/BlogPage";
+import ContactPage from "./Components/Pages/ContactPage";
+import "./CSS/App.css";
+import Footer from "./Components/Footer";
+import BlogContentPage from "./Components/Pages/BlogContentPage";
+const App = (): JSX.Element => {
+  React.useEffect(() => {
+    window.addEventListener("scroll", () => {
+      const navbar = document.querySelector("nav");
+      const totalHeight =
+        document.documentElement.scrollHeight - window.innerHeight;
 
-function App() {
+      const scrollPercentage = (window.scrollY / totalHeight) * 100;
+      if (scrollPercentage > 10) {
+        navbar?.classList.add("dark-nav");
+      } else {
+        navbar?.classList.remove("dark-nav");
+      }
+
+      return () => {
+        window.removeEventListener("scroll", () => {});
+      };
+    });
+  });
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="container">
+        <Navbar />
+        <Routes>
+          <Route path="/" Component={HomePage} />
+          <Route path="/blog" Component={BlogPage} />
+          <Route path="/blog/:slug/:id" Component={BlogContentPage} />
+          <Route path="/contact" Component={ContactPage} />
+        </Routes>
+      </div>
+      <Footer />
+    </Router>
   );
-}
+};
 
 export default App;
