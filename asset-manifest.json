@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.0f5e15db.css",
-    "main.js": "/static/js/main.3adc5791.js",
+    "main.js": "/static/js/main.90d2bbf8.js",
     "static/media/gojo-satoru-gif-3.gif": "/static/media/gojo-satoru-gif-3.d13eb32928a04d02ebac.gif",
     "static/media/kaisen.jpg": "/static/media/kaisen.8bb4cba5ef882c16dcc8.jpg",
     "static/media/gojo-gif-2.gif": "/static/media/gojo-gif-2.add6d4d80390e67f4ede.gif",
@@ -9,10 +9,10 @@
     "static/media/ICPC.jpg": "/static/media/ICPC.d1d3d4da13794ddd682d.jpg",
     "index.html": "/index.html",
     "main.0f5e15db.css.map": "/static/css/main.0f5e15db.css.map",
-    "main.3adc5791.js.map": "/static/js/main.3adc5791.js.map"
+    "main.90d2bbf8.js.map": "/static/js/main.90d2bbf8.js.map"
   },
   "entrypoints": [
     "static/css/main.0f5e15db.css",
-    "static/js/main.3adc5791.js"
+    "static/js/main.90d2bbf8.js"
   ]
 }
